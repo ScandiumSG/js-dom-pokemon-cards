@@ -51,7 +51,7 @@ function GenerateCard(pokemon) {
     const header = GenerateCardHeader(pokemon)
     cardElement.appendChild(header)
 
-    const pokemonImageContainer = GeneratePokemonImage(imagePaths, CardImageDescription)
+    const pokemonImageContainer = GeneratePokemonImage(pokemon, imagePaths, CardImageDescription)
     header.appendChild(pokemonImageContainer)
     
     const pokemonStats = GenerateStatList(pokemon)
@@ -82,7 +82,8 @@ function GenerateCardHeader(pokemon) {
  * @param {string[]} imgDescs String of description for each possible pokemon image
  * @returns A div element, containing a description (<p>) and and image (<img>)
  */
-function GeneratePokemonImage(imgPaths, imgDescs) {
+function GeneratePokemonImage(pokemon, imgPaths, imgDescs) {
+    const customBackground = true
     let continueSlideshow = true
     let lockSlideshow = false
     // Generate the card image
@@ -90,6 +91,20 @@ function GeneratePokemonImage(imgPaths, imgDescs) {
     imageContainer.classList.add("imageContainer")
     const imageDescription = document.createElement("p")
     const image = document.createElement('img')
+    if (customBackground) {
+        if (pokemon.type === 'grass' || pokemon.type === 'bug') {
+            image.classList.add('grass--type')
+        } else if (pokemon.type === 'flying') {
+            image.classList.add('flying--type')
+        } else if (pokemon.type === 'fire') {
+            image.classList.add('fire--type')
+        } else if (pokemon.type === 'water') {
+            image.classList.add('water--type')
+        } else if (pokemon.type === 'normal') {
+            image.classList.add('normal--type')
+        }   
+    }
+
     image.width = "256"
     image.classList.add("card--img")
     image.src = imgPaths[0]

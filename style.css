@@ -42,7 +42,7 @@ h2 {
   list-style: none;
   border: 1px solid #252525;
   border-radius: 8px;
-
+  background-color: #b3a125;
   cursor: pointer;
   transition: all 300ms;
 }
@@ -62,8 +62,31 @@ h2 {
 .card--img {
   display: block;
   margin: 0 auto;
-
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.fire--type {
+  background-image: url("./src/media/fiery_stone.png");
+  background-position: 40% 70%;
+}
+
+.water--type {
+  background-image: url("./src/media/beach.png");
+  background-position: 95% 75%
+}
+
+.grass--type {
+  background-image: url("./src/media/grassy_field.png");
+  background-position: 30% 40%;
+}
+
+.flying--type {
+  background-image: url("./src/media/grassy_field.png");
+}
+
+.normal--type {
+  background-image: url("./src/media/city_street.png");
+  background-position: 60% 90%;
 }
 
 /* Accordian styling borrowed from w3, https://www.w3schools.com/howto/howto_js_accordion.asp
